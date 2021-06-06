@@ -1,0 +1,922 @@
+
+
+Mon Mar 15 19:18:22 2021
+Command line: TestDisk
+
+TestDisk 7.0, Data Recovery Utility, April 2015
+Christophe GRENIER <grenier@cgsecurity.org>
+http://www.cgsecurity.org
+OS: Linux, kernel 4.9.140-tegra (#1 SMP PREEMPT Fri Oct 16 12:25:00 PDT 2020) aarch64
+Compiler: GCC 7.2
+ext2fs lib: 1.44.1, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.0
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Hard disk list
+Disk /dev/mmcblk0 - 31 GB / 29 GiB - CHS 954368 4 16, sector size=512
+
+Partition table type (auto): EFI GPT
+Disk /dev/mmcblk0 - 31 GB / 29 GiB
+Partition table type: EFI GPT
+
+Interface Advanced
+hdr_size=92
+hdr_lba_self=1
+hdr_lba_alt=61079551 (expected 61079551)
+hdr_lba_start=40
+hdr_lba_end=61079519
+hdr_lba_table=2
+hdr_entries=128
+hdr_entsz=128
+check_part_gpt failed for partition
+ 2 P MS Data                 58720296   58720615        320 [mts-mce]
+check_part_gpt failed for partition
+ 3 P MS Data                 58720616   58720935        320 [mts-mce_b]
+check_part_gpt failed for partition
+ 4 P MS Data                 58720936   58729127       8192 [mts-proper]
+check_part_gpt failed for partition
+ 5 P MS Data                 58729128   58737319       8192 [mts-proper_b]
+check_part_gpt failed for partition
+ 6 P MS Data                 58737320   58740071       2752 [cpu-bootloader]
+check_part_gpt failed for partition
+ 7 P MS Data                 58740072   58742823       2752 [cpu-bootloader_b]
+check_part_gpt failed for partition
+ 8 P MS Data                 58742824   58743847       1024 [bootloader-dtb]
+check_part_gpt failed for partition
+ 9 P MS Data                 58743848   58744871       1024 [bootloader-dtb_b]
+check_part_gpt failed for partition
+10 P MS Data                 58744872   58749991       5120 [secure-os]
+check_part_gpt failed for partition
+11 P MS Data                 58749992   58755111       5120 [secure-os_b]
+check_part_gpt failed for partition
+12 P MS Data                 58755112   58755239        128 [eks]
+check_part_gpt failed for partition
+13 P MS Data                 58755240   58755367        128 [eks_b]
+check_part_gpt failed for partition
+14 P MS Data                 58755368   58758439       3072 [bpmp-fw]
+check_part_gpt failed for partition
+15 P MS Data                 58758440   58761511       3072 [bpmp-fw_b]
+check_part_gpt failed for partition
+16 P MS Data                 58761512   58763559       2048 [bpmp-fw-dtb]
+check_part_gpt failed for partition
+17 P MS Data                 58763560   58765607       2048 [bpmp-fw-dtb_b]
+check_part_gpt failed for partition
+18 P MS Data                 58765608   58765927        320 [xusb-fw]
+check_part_gpt failed for partition
+19 P MS Data                 58765928   58766247        320 [xusb-fw_b]
+check_part_gpt failed for partition
+20 P MS Data                 58766248   58768295       2048 [rce-fw]
+check_part_gpt failed for partition
+21 P MS Data                 58768296   58770343       2048 [rce-fw_b]
+check_part_gpt failed for partition
+22 P MS Data                 58770344   58774439       4096 [adsp-fw]
+check_part_gpt failed for partition
+23 P MS Data                 58774440   58778535       4096 [adsp-fw_b]
+check_part_gpt failed for partition
+24 P MS Data                 58778536   58780583       2048 [sce-fw]
+check_part_gpt failed for partition
+25 P MS Data                 58780584   58782631       2048 [sce-fw_b]
+check_part_gpt failed for partition
+26 P MS Data                 58782632   58782887        256 [sc7]
+check_part_gpt failed for partition
+27 P MS Data                 58782888   58783143        256 [sc7_b]
+check_part_gpt failed for partition
+28 P MS Data                 58783144   59045287     262144 [BMP]
+check_part_gpt failed for partition
+29 P MS Data                 59045288   59307431     262144 [BMP_b]
+check_part_gpt failed for partition
+30 P MS Data                 59307432   59436455     129024 [recovery]
+check_part_gpt failed for partition
+31 P MS Data                 59436456   59437479       1024 [recovery-dtb]
+check_part_gpt failed for partition
+32 P MS Data                 59437480   59437607        128 [kernel-bootctrl]
+check_part_gpt failed for partition
+33 P MS Data                 59437608   59437735        128 [kernel-bootctrl_b]
+check_part_gpt failed for partition
+34 P MS Data                 59437736   59601575     163840 [kernel]
+check_part_gpt failed for partition
+35 P MS Data                 59601576   59765415     163840 [kernel_b]
+check_part_gpt failed for partition
+36 P MS Data                 59765416   59766439       1024 [kernel-dtb]
+check_part_gpt failed for partition
+37 P MS Data                 59766440   59767463       1024 [kernel-dtb_b]
+check_part_gpt failed for partition
+38 P MS Data                 59767464   59767471          8 [CPUBL-CFG]
+check_part_gpt failed for partition
+39 P MS Data                 59767472   59783855      16384 [RP1]
+check_part_gpt failed for partition
+40 P MS Data                 59783856   59800239      16384 [RP2]
+check_part_gpt failed for partition
+41 P MS Data                 59800240   60414639     614400 [RECROOTFS]
+check_part_gpt failed for partition
+42 P MS Data                 60414640   61079518     664879 [UDA]
+ 1 P MS Data                       40   58720295   58720256 [APP]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 30 GB / 28 GiB
+ 2 P MS Data                 58720296   58720615        320 [mts-mce]
+ 3 P MS Data                 58720616   58720935        320 [mts-mce_b]
+ 4 P MS Data                 58720936   58729127       8192 [mts-proper]
+ 5 P MS Data                 58729128   58737319       8192 [mts-proper_b]
+ 6 P MS Data                 58737320   58740071       2752 [cpu-bootloader]
+ 7 P MS Data                 58740072   58742823       2752 [cpu-bootloader_b]
+ 8 P MS Data                 58742824   58743847       1024 [bootloader-dtb]
+ 9 P MS Data                 58743848   58744871       1024 [bootloader-dtb_b]
+10 P MS Data                 58744872   58749991       5120 [secure-os]
+11 P MS Data                 58749992   58755111       5120 [secure-os_b]
+12 P MS Data                 58755112   58755239        128 [eks]
+13 P MS Data                 58755240   58755367        128 [eks_b]
+14 P MS Data                 58755368   58758439       3072 [bpmp-fw]
+15 P MS Data                 58758440   58761511       3072 [bpmp-fw_b]
+16 P MS Data                 58761512   58763559       2048 [bpmp-fw-dtb]
+17 P MS Data                 58763560   58765607       2048 [bpmp-fw-dtb_b]
+18 P MS Data                 58765608   58765927        320 [xusb-fw]
+19 P MS Data                 58765928   58766247        320 [xusb-fw_b]
+20 P MS Data                 58766248   58768295       2048 [rce-fw]
+21 P MS Data                 58768296   58770343       2048 [rce-fw_b]
+22 P MS Data                 58770344   58774439       4096 [adsp-fw]
+23 P MS Data                 58774440   58778535       4096 [adsp-fw_b]
+24 P MS Data                 58778536   58780583       2048 [sce-fw]
+25 P MS Data                 58780584   58782631       2048 [sce-fw_b]
+26 P MS Data                 58782632   58782887        256 [sc7]
+27 P MS Data                 58782888   58783143        256 [sc7_b]
+28 P MS Data                 58783144   59045287     262144 [BMP]
+29 P MS Data                 59045288   59307431     262144 [BMP_b]
+30 P MS Data                 59307432   59436455     129024 [recovery]
+31 P MS Data                 59436456   59437479       1024 [recovery-dtb]
+32 P MS Data                 59437480   59437607        128 [kernel-bootctrl]
+33 P MS Data                 59437608   59437735        128 [kernel-bootctrl_b]
+34 P MS Data                 59437736   59601575     163840 [kernel]
+35 P MS Data                 59601576   59765415     163840 [kernel_b]
+36 P MS Data                 59765416   59766439       1024 [kernel-dtb]
+37 P MS Data                 59766440   59767463       1024 [kernel-dtb_b]
+38 P MS Data                 59767464   59767471          8 [CPUBL-CFG]
+39 P MS Data                 59767472   59783855      16384 [RP1]
+40 P MS Data                 59783856   59800239      16384 [RP2]
+41 P MS Data                 59800240   60414639     614400 [RECROOTFS]
+42 P MS Data                 60414640   61079518     664879 [UDA]
+
+
+dir_partition inode=2
+ 1 P MS Data                       40   58720295   58720256 [APP]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 30 GB / 28 GiB
+Directory /
+       2 drwxr-xr-x     0      0      4096 26-Jan-2021 18:13 .
+       2 drwxr-xr-x     0      0      4096 26-Jan-2021 18:13 ..
+      11 drwx------     0      0     16384 26-Jan-2021 17:47 lost+found
+  786433 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 boot
+ 1048577 drwxr-xr-x     0      0      4096 27-Jan-2021 12:47 bin
+ 1179649 drwxr-xr-x     0      0      4096 26-Jan-2021 17:45 dev
+  131073 drwxr-xr-x     0      0     12288 15-Mar-2021 18:39 etc
+  524289 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 home
+  655361 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 lib
+ 1310721 drwxr-xr-x     0      0      4096  6-Aug-2018 11:29 media
+ 1572865 drwxr-xr-x     0      0      4096 15-Mar-2021 18:39 mnt
+  262145 drwxr-xr-x     0      0      4096 27-Jan-2021 14:37 opt
+ 1441793 drwxr-xr-x     0      0      4096 24-Apr-2018 14:04 proc
+      12 -rw-rw-r--  1001   1002        62 17-Oct-2020 01:06 README.txt
+  393217 drwx------     0      0      4096 26-Jan-2021 18:29 root
+ 1703937 drwxr-xr-x     0      0      4096  8-Oct-2020 10:05 run
+  393220 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 sbin
+ 1048771 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 snap
+ 1179651 drwxr-xr-x     0      0      4096 26-Apr-2018 23:40 srv
+ 1310722 drwxr-xr-x     0      0      4096 24-Apr-2018 14:04 sys
+  524290 drwxrwxrwt     0      0     12288 15-Mar-2021 19:17 tmp
+ 1441794 drwxr-xr-x     0      0      4096 26-Jan-2021 18:46 usr
+ 1321742 drwxr-xr-x     0      0      4096 26-Jan-2021 18:50 var
+
+dir_partition inode=524289
+ 1 P MS Data                       40   58720295   58720256 [APP]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 30 GB / 28 GiB
+Directory /home
+  524289 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 .
+       2 drwxr-xr-x     0      0      4096 26-Jan-2021 18:13 ..
+  530070 drwxr-xr-x  1000   1000      4096 15-Mar-2021 18:38 nvidia
+
+dir_partition inode=530070
+ 1 P MS Data                       40   58720295   58720256 [APP]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 30 GB / 28 GiB
+Directory /home/nvidia
+  530070 drwxr-xr-x  1000   1000      4096 15-Mar-2021 18:38 .
+  524289 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 ..
+  530071 -rw-r--r--  1000   1000       807 26-Jan-2021 18:34 .profile
+  530078 -rw-r--r--  1000   1000      2090 26-Jan-2021 18:34 .xsessionrc
+  530079 -rw-r--r--  1000   1000      8980 26-Jan-2021 18:34 examples.desktop
+  530087 -rw-r--r--  1000   1000      4176 15-Feb-2021 15:28 .bashrc
+  530088 drwxr-xr-x  1000   1000      4096 26-Jan-2021 18:35 Desktop
+  530096 -rw-r--r--  1000   1000       220 26-Jan-2021 18:34 .bash_logout
+  530106 drwx------  1000   1000      4096 26-Jan-2021 18:35 .gnupg
+  530108 drwx------  1000   1000      4096  4-Feb-2021 16:26 .cache
+  530112 drwx------  1000   1000      4096 26-Jan-2021 19:03 .local
+  530120 drwx------  1000   1000      4096 22-Feb-2021 19:12 .config
+  530191 drwxr-xr-x  1000   1000      4096 19-Feb-2021 17:38 Downloads
+  530192 drwxr-xr-x  1000   1000      4096 26-Jan-2021 18:35 Templates
+  530166 -rw-------  1000   1000       354 26-Jan-2021 18:35 .ICEauthority
+  530193 drwxr-xr-x  1000   1000      4096 26-Jan-2021 18:35 Public
+  530194 drwxr-xr-x  1000   1000      4096 23-Feb-2021 10:46 Documents
+  530195 drwxr-xr-x  1000   1000      4096 26-Jan-2021 18:35 Music
+  530196 drwxr-xr-x  1000   1000      4096 26-Jan-2021 18:35 Pictures
+  530197 drwxr-xr-x  1000   1000      4096 26-Jan-2021 18:35 Videos
+  530204 drwx------  1000   1000      4096 26-Jan-2021 18:35 .gconf
+  530251 drwx------  1000   1000      4096  4-Feb-2021 16:26 .nv
+  530268 -rw-r--r--  1000   1000         0 26-Jan-2021 18:35 .sudo_as_admin_successful
+  826394 drwxrwxr-x  1000   1000      4096 26-Jan-2021 18:50 VisionWorks-SFM-0.90-Samples
+  590156 drwxrwxr-x  1000   1000      4096  2-Mar-2021 13:26 alive
+  530507 drwx------  1000   1000      4096 26-Jan-2021 18:36 .pki
+  575303 -rw-------  1000   1000       300 15-Feb-2021 19:45 .Xauthority
+  590485 -rw-------  1000   1000     31516 15-Mar-2021 18:02 .viminfo
+  530412 -rw-rw-r--  1000   1000       256 26-Jan-2021 19:02 .wget-hsts
+  943269 drwxrwxr-x  1000   1000      4096 26-Jan-2021 19:27 torchvision
+  581479 -rw-------  1000   1000      1460 10-Mar-2021 03:17 .python_history
+X 590485 -rw-------  1000   1000     31516 15-Mar-2021 18:02 .viminfo.tmp
+  788486 drwxrwxr-x  1000   1000      4096 26-Jan-2021 20:11 opencv-3.4
+  945888 drwxrwxr-x  1000   1000      4096 26-Jan-2021 20:03 lib
+  536837 -rw-------  1000   1000     40335 15-Mar-2021 18:38 .bash_history
+  536643 drwxrwxr-x  1000   1000      4096 15-Mar-2021 18:06 .ros
+  575341 -rw-rw-r--  1000   1000        66 16-Feb-2021 18:33 .gitconfig
+  579042 -r-x--x--x  1000   1000  44196460 19-Feb-2021 17:43 cmake-3.19.5-Linux-aarch64.sh
+X 598159 drwxrwxr-x  1000   1000      4096 10-Mar-2021 01:10 torch_test
+  536661 drwxr-xr-x  1000   1000      4096 16-Oct-2018 04:14 flycapture.2.13.3.31_arm64
+  530231 drwxr-xr-x  1000   1000      4096 11-Feb-2021 11:15 LaneATT
+  571532 drwx------     0      0      4096  4-Feb-2021 12:12 .dbus
+  573484 drwxrwxr-x  1000   1000      4096  6-Feb-2021 15:30 catkin_ws2
+X 573467 -rw-rw-r--  1000   1000       152 16-Feb-2021 17:34 .Xauthority
+  573573 drwxr-xr-x  1000   1000      4096  6-Feb-2021 13:43 libtorch
+  573558 drwxrwxr-x  1000   1000      4096  6-Feb-2021 15:03 libtorch_mine
+  573477 drwxrwxr-x  1000   1000      4096 22-Feb-2021 19:39 catkin_ws
+  574061 -rwxrwxr-x  1000   1000      1504  6-Feb-2021 15:37 image_pub.py
+  582698 drwxrwxr-x  1000   1000      4096 19-Feb-2021 17:44 cmake-3.19.5-Linux-aarch64
+  598159 drwxrwxr-x  1000   1000      4096 10-Mar-2021 01:10 Asus@192.168.25.63
+  574539 drwxrwxr-x  1000   1000      4096  8-Feb-2021 11:41 libtorch-yolov5
+  574606 -rwxrwxr-x  1000   1000      6983  8-Feb-2021 13:38 temp_image_pub.py
+X 574601 -rw-r--r--  1000   1000    168949 15-Feb-2021 17:17 bus.jpg
+  573485 drwxr-xr-x  1000   1000      4096 11-Mar-2021 14:16 .vim
+X 536837 -rw-------  1000   1000     40335 15-Mar-2021 18:38 .bash_history-07774.tmp
+  574782 -rwxrwxr-x  1000   1000 1677951808  9-Feb-2021 14:37 kitti_2011_09_26_drive_0015_synced.bag
+  573491 drwxrwxr-x  1000   1000      4096 11-Feb-2021 11:13 PINet_new
+X 571537 -rw-r--r--  1000   1000      4185 15-Feb-2021 17:16 DND_3.mp4
+X 581666 drwxrwxr-x  1000   1000      4096 15-Feb-2021 19:18 perception
+  574080 -rw-r--r--  1000   1000      4100 12-Feb-2021 21:28 .bashrc.save
+  581774 drwx------  1000   1000      4096 15-Feb-2021 13:25 .ssh
+X 575493 -rw-rw-r--  1000   1000       516 22-Feb-2021 19:44 od.zip
+  581901 drwxrwxr-x  1000   1000      4096 15-Feb-2021 15:30 .rviz
+  581775 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:07 perception_module
+X 573466 -rw-r--r--  1000   1000      2076 15-Feb-2021 17:16 .Xauthority-c
+X 573466 -rw-r--r--  1000   1000      2076 15-Feb-2021 17:16 .Xauthority-l
+X 573467 -rw-rw-r--  1000   1000       152 16-Feb-2021 17:34 .Xauthority-n
+
+dir_partition inode=581775
+ 1 P MS Data                       40   58720295   58720256 [APP]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 30 GB / 28 GiB
+Directory /home/nvidia/perception_module
+  581775 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:07 .
+  530070 drwxr-xr-x  1000   1000      4096 15-Mar-2021 18:38 ..
+  581776 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:10 src
+  598021 drwxrwxr-x  1000   1000      4096 11-Mar-2021 19:16 build
+  598022 drwxrwxr-x  1000   1000      4096 11-Mar-2021 14:03 devel
+  575645 -rw-rw-r--  1000   1000        98 13-Feb-2021 01:59 .catkin_workspace
+  578105 -rw-rw-r--  1000   1000     20854 15-Mar-2021 19:17 testdisk.log
+  598466 drwxr-xr-x     0      0      4096 15-Mar-2021 19:16 home
+X 575098 -rw-r--r--  1000   1000       137 15-Feb-2021 17:17 TargetDirectories.txt
+X 575100 -rw-r--r--  1000   1000      8249 15-Feb-2021 17:17 progress.marks
+X 575102 -rw-r--r--  1000   1000         0 15-Feb-2021 17:17 Makefile.cmake.tmp
+
+dir_partition inode=581776
+ 1 P MS Data                       40   58720295   58720256 [APP]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 30 GB / 28 GiB
+Directory /home/nvidia/perception_module/src
+  581776 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:10 .
+  581775 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:07 ..
+  575500 lrwxrwxrwx  1000   1000        50 13-Feb-2021 02:11 CMakeLists.txt
+  581633 drwxrwxr-x  1000   1000      4096 11-Mar-2021 19:15 object_detection
+  598521 drwxr-xr-x     0      0      4096 15-Mar-2021 19:10 home
+X 581473 -rw-rw-r--  1000   1000     46044 11-Mar-2021 19:24 .CMakeLists.txt.swp
+X 575097 -rw-r--r--  1000   1000      8233 15-Feb-2021 17:17 TargetDirectories.txt
+X 575099 -rw-r--r--  1000   1000      2185 15-Feb-2021 17:17 progress.marks
+X 575101 -rw-r--r--  1000   1000      1483 15-Feb-2021 17:17 Makefile.cmake.tmp
+Directory /home/nvidia/perception_module
+  581775 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:07 .
+  530070 drwxr-xr-x  1000   1000      4096 15-Mar-2021 18:38 ..
+  581776 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:10 src
+  598021 drwxrwxr-x  1000   1000      4096 11-Mar-2021 19:16 build
+  598022 drwxrwxr-x  1000   1000      4096 11-Mar-2021 14:03 devel
+  575645 -rw-rw-r--  1000   1000        98 13-Feb-2021 01:59 .catkin_workspace
+  578105 -rw-rw-r--  1000   1000     20854 15-Mar-2021 19:17 testdisk.log
+  598466 drwxr-xr-x     0      0      4096 15-Mar-2021 19:16 home
+X 575098 -rw-r--r--  1000   1000       137 15-Feb-2021 17:17 TargetDirectories.txt
+X 575100 -rw-r--r--  1000   1000      8249 15-Feb-2021 17:17 progress.marks
+X 575102 -rw-r--r--  1000   1000         0 15-Feb-2021 17:17 Makefile.cmake.tmp
+
+dir_partition inode=581776
+ 1 P MS Data                       40   58720295   58720256 [APP]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 30 GB / 28 GiB
+Directory /home/nvidia/perception_module/src
+  581776 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:10 .
+  581775 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:07 ..
+  575500 lrwxrwxrwx  1000   1000        50 13-Feb-2021 02:11 CMakeLists.txt
+  581633 drwxrwxr-x  1000   1000      4096 11-Mar-2021 19:15 object_detection
+  598521 drwxr-xr-x     0      0      4096 15-Mar-2021 19:10 home
+X 581473 -rw-rw-r--  1000   1000     46044 11-Mar-2021 19:24 .CMakeLists.txt.swp
+X 575097 -rw-r--r--  1000   1000      8233 15-Feb-2021 17:17 TargetDirectories.txt
+X 575099 -rw-r--r--  1000   1000      2185 15-Feb-2021 17:17 progress.marks
+X 575101 -rw-r--r--  1000   1000      1483 15-Feb-2021 17:17 Makefile.cmake.tmp
+
+dir_partition inode=581633
+ 1 P MS Data                       40   58720295   58720256 [APP]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 30 GB / 28 GiB
+Directory /home/nvidia/perception_module/src/object_detection
+  581633 drwxrwxr-x  1000   1000      4096 11-Mar-2021 19:15 .
+  581776 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:10 ..
+  581634 drwxrwxr-x  1000   1000      4096 11-Mar-2021 13:35 include
+  581637 drwxrwxr-x  1000   1000      4096 15-Mar-2021 18:35 src
+  575507 -rw-r--r--  1000   1000      8949 11-Mar-2021 19:15 CMakeLists.txt
+  581638 drwxrwxr-x  1000   1000      4096 17-Feb-2021 20:26 scripts
+  575220 -rw-r--r--  1000   1000      3419 11-Mar-2021 14:01 package.xml
+  581664 drwxrwxr-x  1000   1000      4096 15-Feb-2021 17:17 msg
+  581665 drwxrwxr-x  1000   1000      4096 15-Feb-2021 17:17 launch
+X 590481 -rw-rw-r--  1000   1000     27759 11-Mar-2021 19:16 .CMakeLists.txt.swp
+X 575506 -rw-rw-r--  1000   1000     16145 12-Mar-2021 01:34 CMakeLists.txt~
+
+dir_partition inode=581637
+ 1 P MS Data                       40   58720295   58720256 [APP]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 30 GB / 28 GiB
+Directory /home/nvidia/perception_module/src/object_detection/src
+  581637 drwxrwxr-x  1000   1000      4096 15-Mar-2021 18:35 .
+  581633 drwxrwxr-x  1000   1000      4096 11-Mar-2021 19:15 ..
+  574489 -rw-r--r--  1000   1000  86477815 15-Feb-2021 17:17 best_gpu.torchscript.pt
+  574502 -rw-r--r--  1000   1000       195 15-Feb-2021 17:17 utils.h
+  589215 -rwxr-xr-x  1000   1000     18446 12-Mar-2021 19:29 image_pub.cpp
+  574530 -rw-r--r--  1000   1000      9748 15-Feb-2021 17:17 detector.cpp
+  574601 -rw-r--r--  1000   1000    168949 15-Feb-2021 17:17 zidane.jpg
+  574615 -rw-r--r--  1000   1000  86703991 15-Feb-2021 17:17 best_gpu_general.torchscript.pt
+  574810 -rw-r--r--  1000   1000  29617807  1-Mar-2021 11:38 best.torchscript.pt
+  574789 -rw-r--r--  1000   1000      3439 15-Feb-2021 17:17 detector.h
+  574806 -rw-r--r--  1000   1000    487438 15-Feb-2021 17:17 bus.jpg
+  581471 -rw-r--r--  1000   1000  66159570  8-Mar-2021 23:48 model_epoch_15_r18_v2.torchscript.pt
+  581470 -rwxrwxr-x  1000   1000     11061 15-Mar-2021 18:35 image_pub_lane_detect.cpp
+X 575505 -rw-rw-r--  1000   1000         5 15-Mar-2021 18:41 .image_pub_lane_detect.cpp.swp
+X 581470 -rwxrwxr-x  1000   1000     11061 15-Mar-2021 18:35 subt.cpp
+  598445 drwxr-xr-x  1000   1000      4096 11-Mar-2021 16:44 nms
+  589225 -rw-r--r--  1000   1000  66159570 11-Mar-2021 19:50 model_epoch_15_r18_v3.torchscript.pt
+X 581478 -rw-r--r--  1000   1000 106715208 15-Mar-2021 12:23 traced_laneatt_model.pt
+  590484 -rw-rw-r--  1000   1000  46914582 12-Mar-2021 15:08 traced_resnet_model.pt
+X 593431 -rw-rw-r--  1000   1000      8288 15-Mar-2021 18:38 traced_laneatt_model_v2.pt
+  593437 -rw-r--r--  1000   1000  66156972 12-Mar-2021 23:30 traced_laneatt_model_v3.pt
+X 593448 -rw-rw-r--  1000   1000       242 15-Mar-2021 18:06 .image_pub_lane_detect.cpp.swp
+  581478 -rw-r--r--  1000   1000 106715208 15-Mar-2021 12:23 model_epoch_15_r18_v5.torchscript.pt
+X 590483 -rw-rw-r--  1000   1000     16131 15-Mar-2021 18:38 .image_pub_lane_detect.cpp.save.swp
+Directory /home/nvidia/perception_module/src/object_detection
+  581633 drwxrwxr-x  1000   1000      4096 11-Mar-2021 19:15 .
+  581776 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:10 ..
+  581634 drwxrwxr-x  1000   1000      4096 11-Mar-2021 13:35 include
+  581637 drwxrwxr-x  1000   1000      4096 15-Mar-2021 18:35 src
+  575507 -rw-r--r--  1000   1000      8949 11-Mar-2021 19:15 CMakeLists.txt
+  581638 drwxrwxr-x  1000   1000      4096 17-Feb-2021 20:26 scripts
+  575220 -rw-r--r--  1000   1000      3419 11-Mar-2021 14:01 package.xml
+  581664 drwxrwxr-x  1000   1000      4096 15-Feb-2021 17:17 msg
+  581665 drwxrwxr-x  1000   1000      4096 15-Feb-2021 17:17 launch
+X 590481 -rw-rw-r--  1000   1000     27759 11-Mar-2021 19:16 .CMakeLists.txt.swp
+X 575506 -rw-rw-r--  1000   1000     16145 12-Mar-2021 01:34 CMakeLists.txt~
+
+dir_partition inode=581637
+ 1 P MS Data                       40   58720295   58720256 [APP]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 30 GB / 28 GiB
+Directory /home/nvidia/perception_module/src/object_detection/src
+  581637 drwxrwxr-x  1000   1000      4096 15-Mar-2021 18:35 .
+  581633 drwxrwxr-x  1000   1000      4096 11-Mar-2021 19:15 ..
+  574489 -rw-r--r--  1000   1000  86477815 15-Feb-2021 17:17 best_gpu.torchscript.pt
+  574502 -rw-r--r--  1000   1000       195 15-Feb-2021 17:17 utils.h
+  589215 -rwxr-xr-x  1000   1000     18446 12-Mar-2021 19:29 image_pub.cpp
+  574530 -rw-r--r--  1000   1000      9748 15-Feb-2021 17:17 detector.cpp
+  574601 -rw-r--r--  1000   1000    168949 15-Feb-2021 17:17 zidane.jpg
+  574615 -rw-r--r--  1000   1000  86703991 15-Feb-2021 17:17 best_gpu_general.torchscript.pt
+  574810 -rw-r--r--  1000   1000  29617807  1-Mar-2021 11:38 best.torchscript.pt
+  574789 -rw-r--r--  1000   1000      3439 15-Feb-2021 17:17 detector.h
+  574806 -rw-r--r--  1000   1000    487438 15-Feb-2021 17:17 bus.jpg
+  581471 -rw-r--r--  1000   1000  66159570  8-Mar-2021 23:48 model_epoch_15_r18_v2.torchscript.pt
+  581470 -rwxrwxr-x  1000   1000     11061 15-Mar-2021 18:35 image_pub_lane_detect.cpp
+X 575505 -rw-rw-r--  1000   1000         5 15-Mar-2021 18:41 .image_pub_lane_detect.cpp.swp
+X 581470 -rwxrwxr-x  1000   1000     11061 15-Mar-2021 18:35 subt.cpp
+  598445 drwxr-xr-x  1000   1000      4096 11-Mar-2021 16:44 nms
+  589225 -rw-r--r--  1000   1000  66159570 11-Mar-2021 19:50 model_epoch_15_r18_v3.torchscript.pt
+X 581478 -rw-r--r--  1000   1000 106715208 15-Mar-2021 12:23 traced_laneatt_model.pt
+  590484 -rw-rw-r--  1000   1000  46914582 12-Mar-2021 15:08 traced_resnet_model.pt
+X 593431 -rw-rw-r--  1000   1000      8288 15-Mar-2021 18:38 traced_laneatt_model_v2.pt
+  593437 -rw-r--r--  1000   1000  66156972 12-Mar-2021 23:30 traced_laneatt_model_v3.pt
+X 593448 -rw-rw-r--  1000   1000       242 15-Mar-2021 18:06 .image_pub_lane_detect.cpp.swp
+  581478 -rw-r--r--  1000   1000 106715208 15-Mar-2021 12:23 model_epoch_15_r18_v5.torchscript.pt
+X 590483 -rw-rw-r--  1000   1000     16131 15-Mar-2021 18:38 .image_pub_lane_detect.cpp.save.swp
+Directory /home/nvidia/perception_module/src/object_detection/src
+  581637 drwxrwxr-x  1000   1000      4096 15-Mar-2021 18:35 .
+  581633 drwxrwxr-x  1000   1000      4096 11-Mar-2021 19:15 ..
+  574489 -rw-r--r--  1000   1000  86477815 15-Feb-2021 17:17 best_gpu.torchscript.pt
+  574502 -rw-r--r--  1000   1000       195 15-Feb-2021 17:17 utils.h
+  589215 -rwxr-xr-x  1000   1000     18446 12-Mar-2021 19:29 image_pub.cpp
+  574530 -rw-r--r--  1000   1000      9748 15-Feb-2021 17:17 detector.cpp
+  574601 -rw-r--r--  1000   1000    168949 15-Feb-2021 17:17 zidane.jpg
+  574615 -rw-r--r--  1000   1000  86703991 15-Feb-2021 17:17 best_gpu_general.torchscript.pt
+  574810 -rw-r--r--  1000   1000  29617807  1-Mar-2021 11:38 best.torchscript.pt
+  574789 -rw-r--r--  1000   1000      3439 15-Feb-2021 17:17 detector.h
+  574806 -rw-r--r--  1000   1000    487438 15-Feb-2021 17:17 bus.jpg
+  581471 -rw-r--r--  1000   1000  66159570  8-Mar-2021 23:48 model_epoch_15_r18_v2.torchscript.pt
+  581470 -rwxrwxr-x  1000   1000     11061 15-Mar-2021 18:35 image_pub_lane_detect.cpp
+  598445 drwxr-xr-x  1000   1000      4096 11-Mar-2021 16:44 nms
+  589225 -rw-r--r--  1000   1000  66159570 11-Mar-2021 19:50 model_epoch_15_r18_v3.torchscript.pt
+  590484 -rw-rw-r--  1000   1000  46914582 12-Mar-2021 15:08 traced_resnet_model.pt
+  593437 -rw-r--r--  1000   1000  66156972 12-Mar-2021 23:30 traced_laneatt_model_v3.pt
+  581478 -rw-r--r--  1000   1000 106715208 15-Mar-2021 12:23 model_epoch_15_r18_v5.torchscript.pt
+Directory /home/nvidia/perception_module/src/object_detection/src
+  581637 drwxrwxr-x  1000   1000      4096 15-Mar-2021 18:35 .
+  581633 drwxrwxr-x  1000   1000      4096 11-Mar-2021 19:15 ..
+  574489 -rw-r--r--  1000   1000  86477815 15-Feb-2021 17:17 best_gpu.torchscript.pt
+  574502 -rw-r--r--  1000   1000       195 15-Feb-2021 17:17 utils.h
+  589215 -rwxr-xr-x  1000   1000     18446 12-Mar-2021 19:29 image_pub.cpp
+  574530 -rw-r--r--  1000   1000      9748 15-Feb-2021 17:17 detector.cpp
+  574601 -rw-r--r--  1000   1000    168949 15-Feb-2021 17:17 zidane.jpg
+  574615 -rw-r--r--  1000   1000  86703991 15-Feb-2021 17:17 best_gpu_general.torchscript.pt
+  574810 -rw-r--r--  1000   1000  29617807  1-Mar-2021 11:38 best.torchscript.pt
+  574789 -rw-r--r--  1000   1000      3439 15-Feb-2021 17:17 detector.h
+  574806 -rw-r--r--  1000   1000    487438 15-Feb-2021 17:17 bus.jpg
+  581471 -rw-r--r--  1000   1000  66159570  8-Mar-2021 23:48 model_epoch_15_r18_v2.torchscript.pt
+  581470 -rwxrwxr-x  1000   1000     11061 15-Mar-2021 18:35 image_pub_lane_detect.cpp
+X 575505 -rw-rw-r--  1000   1000         5 15-Mar-2021 18:41 .image_pub_lane_detect.cpp.swp
+X 581470 -rwxrwxr-x  1000   1000     11061 15-Mar-2021 18:35 subt.cpp
+  598445 drwxr-xr-x  1000   1000      4096 11-Mar-2021 16:44 nms
+  589225 -rw-r--r--  1000   1000  66159570 11-Mar-2021 19:50 model_epoch_15_r18_v3.torchscript.pt
+X 581478 -rw-r--r--  1000   1000 106715208 15-Mar-2021 12:23 traced_laneatt_model.pt
+  590484 -rw-rw-r--  1000   1000  46914582 12-Mar-2021 15:08 traced_resnet_model.pt
+X 593431 -rw-rw-r--  1000   1000      8288 15-Mar-2021 18:38 traced_laneatt_model_v2.pt
+  593437 -rw-r--r--  1000   1000  66156972 12-Mar-2021 23:30 traced_laneatt_model_v3.pt
+X 593448 -rw-rw-r--  1000   1000       242 15-Mar-2021 18:06 .image_pub_lane_detect.cpp.swp
+  581478 -rw-r--r--  1000   1000 106715208 15-Mar-2021 12:23 model_epoch_15_r18_v5.torchscript.pt
+X 590483 -rw-rw-r--  1000   1000     16131 15-Mar-2021 18:38 .image_pub_lane_detect.cpp.save.swp
+Directory /home/nvidia/perception_module/src/object_detection
+  581633 drwxrwxr-x  1000   1000      4096 11-Mar-2021 19:15 .
+  581776 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:10 ..
+  581634 drwxrwxr-x  1000   1000      4096 11-Mar-2021 13:35 include
+  581637 drwxrwxr-x  1000   1000      4096 15-Mar-2021 18:35 src
+  575507 -rw-r--r--  1000   1000      8949 11-Mar-2021 19:15 CMakeLists.txt
+  581638 drwxrwxr-x  1000   1000      4096 17-Feb-2021 20:26 scripts
+  575220 -rw-r--r--  1000   1000      3419 11-Mar-2021 14:01 package.xml
+  581664 drwxrwxr-x  1000   1000      4096 15-Feb-2021 17:17 msg
+  581665 drwxrwxr-x  1000   1000      4096 15-Feb-2021 17:17 launch
+X 590481 -rw-rw-r--  1000   1000     27759 11-Mar-2021 19:16 .CMakeLists.txt.swp
+X 575506 -rw-rw-r--  1000   1000     16145 12-Mar-2021 01:34 CMakeLists.txt~
+
+dir_partition inode=581637
+ 1 P MS Data                       40   58720295   58720256 [APP]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 30 GB / 28 GiB
+Directory /home/nvidia/perception_module/src/object_detection/src
+  581637 drwxrwxr-x  1000   1000      4096 15-Mar-2021 18:35 .
+  581633 drwxrwxr-x  1000   1000      4096 11-Mar-2021 19:15 ..
+  574489 -rw-r--r--  1000   1000  86477815 15-Feb-2021 17:17 best_gpu.torchscript.pt
+  574502 -rw-r--r--  1000   1000       195 15-Feb-2021 17:17 utils.h
+  589215 -rwxr-xr-x  1000   1000     18446 12-Mar-2021 19:29 image_pub.cpp
+  574530 -rw-r--r--  1000   1000      9748 15-Feb-2021 17:17 detector.cpp
+  574601 -rw-r--r--  1000   1000    168949 15-Feb-2021 17:17 zidane.jpg
+  574615 -rw-r--r--  1000   1000  86703991 15-Feb-2021 17:17 best_gpu_general.torchscript.pt
+  574810 -rw-r--r--  1000   1000  29617807  1-Mar-2021 11:38 best.torchscript.pt
+  574789 -rw-r--r--  1000   1000      3439 15-Feb-2021 17:17 detector.h
+  574806 -rw-r--r--  1000   1000    487438 15-Feb-2021 17:17 bus.jpg
+  581471 -rw-r--r--  1000   1000  66159570  8-Mar-2021 23:48 model_epoch_15_r18_v2.torchscript.pt
+  581470 -rwxrwxr-x  1000   1000     11061 15-Mar-2021 18:35 image_pub_lane_detect.cpp
+X 575505 -rw-rw-r--  1000   1000         5 15-Mar-2021 18:41 .image_pub_lane_detect.cpp.swp
+X 581470 -rwxrwxr-x  1000   1000     11061 15-Mar-2021 18:35 subt.cpp
+  598445 drwxr-xr-x  1000   1000      4096 11-Mar-2021 16:44 nms
+  589225 -rw-r--r--  1000   1000  66159570 11-Mar-2021 19:50 model_epoch_15_r18_v3.torchscript.pt
+X 581478 -rw-r--r--  1000   1000 106715208 15-Mar-2021 12:23 traced_laneatt_model.pt
+  590484 -rw-rw-r--  1000   1000  46914582 12-Mar-2021 15:08 traced_resnet_model.pt
+X 593431 -rw-rw-r--  1000   1000      8288 15-Mar-2021 18:38 traced_laneatt_model_v2.pt
+  593437 -rw-r--r--  1000   1000  66156972 12-Mar-2021 23:30 traced_laneatt_model_v3.pt
+X 593448 -rw-rw-r--  1000   1000       242 15-Mar-2021 18:06 .image_pub_lane_detect.cpp.swp
+  581478 -rw-r--r--  1000   1000 106715208 15-Mar-2021 12:23 model_epoch_15_r18_v5.torchscript.pt
+X 590483 -rw-rw-r--  1000   1000     16131 15-Mar-2021 18:38 .image_pub_lane_detect.cpp.save.swp
+Directory /home/nvidia/perception_module/src/object_detection
+  581633 drwxrwxr-x  1000   1000      4096 11-Mar-2021 19:15 .
+  581776 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:10 ..
+  581634 drwxrwxr-x  1000   1000      4096 11-Mar-2021 13:35 include
+  581637 drwxrwxr-x  1000   1000      4096 15-Mar-2021 18:35 src
+  575507 -rw-r--r--  1000   1000      8949 11-Mar-2021 19:15 CMakeLists.txt
+  581638 drwxrwxr-x  1000   1000      4096 17-Feb-2021 20:26 scripts
+  575220 -rw-r--r--  1000   1000      3419 11-Mar-2021 14:01 package.xml
+  581664 drwxrwxr-x  1000   1000      4096 15-Feb-2021 17:17 msg
+  581665 drwxrwxr-x  1000   1000      4096 15-Feb-2021 17:17 launch
+X 590481 -rw-rw-r--  1000   1000     27759 11-Mar-2021 19:16 .CMakeLists.txt.swp
+X 575506 -rw-rw-r--  1000   1000     16145 12-Mar-2021 01:34 CMakeLists.txt~
+Directory /home/nvidia/perception_module/src
+  581776 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:10 .
+  581775 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:07 ..
+  575500 lrwxrwxrwx  1000   1000        50 13-Feb-2021 02:11 CMakeLists.txt
+  581633 drwxrwxr-x  1000   1000      4096 11-Mar-2021 19:15 object_detection
+  598521 drwxr-xr-x     0      0      4096 15-Mar-2021 19:10 home
+X 581473 -rw-rw-r--  1000   1000     46044 11-Mar-2021 19:24 .CMakeLists.txt.swp
+X 575097 -rw-r--r--  1000   1000      8233 15-Feb-2021 17:17 TargetDirectories.txt
+X 575099 -rw-r--r--  1000   1000      2185 15-Feb-2021 17:17 progress.marks
+X 575101 -rw-r--r--  1000   1000      1483 15-Feb-2021 17:17 Makefile.cmake.tmp
+Directory /home/nvidia/perception_module
+  581775 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:07 .
+  530070 drwxr-xr-x  1000   1000      4096 15-Mar-2021 18:38 ..
+  581776 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:10 src
+  598021 drwxrwxr-x  1000   1000      4096 11-Mar-2021 19:16 build
+  598022 drwxrwxr-x  1000   1000      4096 11-Mar-2021 14:03 devel
+  575645 -rw-rw-r--  1000   1000        98 13-Feb-2021 01:59 .catkin_workspace
+  578105 -rw-rw-r--  1000   1000     20854 15-Mar-2021 19:17 testdisk.log
+  598466 drwxr-xr-x     0      0      4096 15-Mar-2021 19:16 home
+X 575098 -rw-r--r--  1000   1000       137 15-Feb-2021 17:17 TargetDirectories.txt
+X 575100 -rw-r--r--  1000   1000      8249 15-Feb-2021 17:17 progress.marks
+X 575102 -rw-r--r--  1000   1000         0 15-Feb-2021 17:17 Makefile.cmake.tmp
+Directory /home/nvidia
+  530070 drwxr-xr-x  1000   1000      4096 15-Mar-2021 18:38 .
+  524289 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 ..
+  530071 -rw-r--r--  1000   1000       807 26-Jan-2021 18:34 .profile
+  530078 -rw-r--r--  1000   1000      2090 26-Jan-2021 18:34 .xsessionrc
+  530079 -rw-r--r--  1000   1000      8980 26-Jan-2021 18:34 examples.desktop
+  530087 -rw-r--r--  1000   1000      4176 15-Feb-2021 15:28 .bashrc
+  530088 drwxr-xr-x  1000   1000      4096 26-Jan-2021 18:35 Desktop
+  530096 -rw-r--r--  1000   1000       220 26-Jan-2021 18:34 .bash_logout
+  530106 drwx------  1000   1000      4096 26-Jan-2021 18:35 .gnupg
+  530108 drwx------  1000   1000      4096  4-Feb-2021 16:26 .cache
+  530112 drwx------  1000   1000      4096 26-Jan-2021 19:03 .local
+  530120 drwx------  1000   1000      4096 22-Feb-2021 19:12 .config
+  530191 drwxr-xr-x  1000   1000      4096 19-Feb-2021 17:38 Downloads
+  530192 drwxr-xr-x  1000   1000      4096 26-Jan-2021 18:35 Templates
+  530166 -rw-------  1000   1000       354 26-Jan-2021 18:35 .ICEauthority
+  530193 drwxr-xr-x  1000   1000      4096 26-Jan-2021 18:35 Public
+  530194 drwxr-xr-x  1000   1000      4096 23-Feb-2021 10:46 Documents
+  530195 drwxr-xr-x  1000   1000      4096 26-Jan-2021 18:35 Music
+  530196 drwxr-xr-x  1000   1000      4096 26-Jan-2021 18:35 Pictures
+  530197 drwxr-xr-x  1000   1000      4096 26-Jan-2021 18:35 Videos
+  530204 drwx------  1000   1000      4096 26-Jan-2021 18:35 .gconf
+  530251 drwx------  1000   1000      4096  4-Feb-2021 16:26 .nv
+  530268 -rw-r--r--  1000   1000         0 26-Jan-2021 18:35 .sudo_as_admin_successful
+  826394 drwxrwxr-x  1000   1000      4096 26-Jan-2021 18:50 VisionWorks-SFM-0.90-Samples
+  590156 drwxrwxr-x  1000   1000      4096  2-Mar-2021 13:26 alive
+  530507 drwx------  1000   1000      4096 26-Jan-2021 18:36 .pki
+  575303 -rw-------  1000   1000       300 15-Feb-2021 19:45 .Xauthority
+  590485 -rw-------  1000   1000     31516 15-Mar-2021 18:02 .viminfo
+  530412 -rw-rw-r--  1000   1000       256 26-Jan-2021 19:02 .wget-hsts
+  943269 drwxrwxr-x  1000   1000      4096 26-Jan-2021 19:27 torchvision
+  581479 -rw-------  1000   1000      1460 10-Mar-2021 03:17 .python_history
+X 590485 -rw-------  1000   1000     31516 15-Mar-2021 18:02 .viminfo.tmp
+  788486 drwxrwxr-x  1000   1000      4096 26-Jan-2021 20:11 opencv-3.4
+  945888 drwxrwxr-x  1000   1000      4096 26-Jan-2021 20:03 lib
+  536837 -rw-------  1000   1000     40335 15-Mar-2021 18:38 .bash_history
+  536643 drwxrwxr-x  1000   1000      4096 15-Mar-2021 18:06 .ros
+  575341 -rw-rw-r--  1000   1000        66 16-Feb-2021 18:33 .gitconfig
+  579042 -r-x--x--x  1000   1000  44196460 19-Feb-2021 17:43 cmake-3.19.5-Linux-aarch64.sh
+X 598159 drwxrwxr-x  1000   1000      4096 10-Mar-2021 01:10 torch_test
+  536661 drwxr-xr-x  1000   1000      4096 16-Oct-2018 04:14 flycapture.2.13.3.31_arm64
+  530231 drwxr-xr-x  1000   1000      4096 11-Feb-2021 11:15 LaneATT
+  571532 drwx------     0      0      4096  4-Feb-2021 12:12 .dbus
+  573484 drwxrwxr-x  1000   1000      4096  6-Feb-2021 15:30 catkin_ws2
+X 573467 -rw-rw-r--  1000   1000       152 16-Feb-2021 17:34 .Xauthority
+  573573 drwxr-xr-x  1000   1000      4096  6-Feb-2021 13:43 libtorch
+  573558 drwxrwxr-x  1000   1000      4096  6-Feb-2021 15:03 libtorch_mine
+  573477 drwxrwxr-x  1000   1000      4096 22-Feb-2021 19:39 catkin_ws
+  574061 -rwxrwxr-x  1000   1000      1504  6-Feb-2021 15:37 image_pub.py
+  582698 drwxrwxr-x  1000   1000      4096 19-Feb-2021 17:44 cmake-3.19.5-Linux-aarch64
+  598159 drwxrwxr-x  1000   1000      4096 10-Mar-2021 01:10 Asus@192.168.25.63
+  574539 drwxrwxr-x  1000   1000      4096  8-Feb-2021 11:41 libtorch-yolov5
+  574606 -rwxrwxr-x  1000   1000      6983  8-Feb-2021 13:38 temp_image_pub.py
+X 574601 -rw-r--r--  1000   1000    168949 15-Feb-2021 17:17 bus.jpg
+  573485 drwxr-xr-x  1000   1000      4096 11-Mar-2021 14:16 .vim
+X 536837 -rw-------  1000   1000     40335 15-Mar-2021 18:38 .bash_history-07774.tmp
+  574782 -rwxrwxr-x  1000   1000 1677951808  9-Feb-2021 14:37 kitti_2011_09_26_drive_0015_synced.bag
+  573491 drwxrwxr-x  1000   1000      4096 11-Feb-2021 11:13 PINet_new
+X 571537 -rw-r--r--  1000   1000      4185 15-Feb-2021 17:16 DND_3.mp4
+X 581666 drwxrwxr-x  1000   1000      4096 15-Feb-2021 19:18 perception
+  574080 -rw-r--r--  1000   1000      4100 12-Feb-2021 21:28 .bashrc.save
+  581774 drwx------  1000   1000      4096 15-Feb-2021 13:25 .ssh
+X 575493 -rw-rw-r--  1000   1000       516 22-Feb-2021 19:44 od.zip
+  581901 drwxrwxr-x  1000   1000      4096 15-Feb-2021 15:30 .rviz
+  581775 drwxrwxr-x  1000   1000      4096 15-Mar-2021 19:07 perception_module
+X 573466 -rw-r--r--  1000   1000      2076 15-Feb-2021 17:16 .Xauthority-c
+X 573466 -rw-r--r--  1000   1000      2076 15-Feb-2021 17:16 .Xauthority-l
+X 573467 -rw-rw-r--  1000   1000       152 16-Feb-2021 17:34 .Xauthority-n
+Directory /home
+  524289 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 .
+       2 drwxr-xr-x     0      0      4096 26-Jan-2021 18:13 ..
+  530070 drwxr-xr-x  1000   1000      4096 15-Mar-2021 18:38 nvidia
+Directory /
+       2 drwxr-xr-x     0      0      4096 26-Jan-2021 18:13 .
+       2 drwxr-xr-x     0      0      4096 26-Jan-2021 18:13 ..
+      11 drwx------     0      0     16384 26-Jan-2021 17:47 lost+found
+  786433 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 boot
+ 1048577 drwxr-xr-x     0      0      4096 27-Jan-2021 12:47 bin
+ 1179649 drwxr-xr-x     0      0      4096 26-Jan-2021 17:45 dev
+  131073 drwxr-xr-x     0      0     12288 15-Mar-2021 18:39 etc
+  524289 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 home
+  655361 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 lib
+ 1310721 drwxr-xr-x     0      0      4096  6-Aug-2018 11:29 media
+ 1572865 drwxr-xr-x     0      0      4096 15-Mar-2021 18:39 mnt
+  262145 drwxr-xr-x     0      0      4096 27-Jan-2021 14:37 opt
+ 1441793 drwxr-xr-x     0      0      4096 24-Apr-2018 14:04 proc
+      12 -rw-rw-r--  1001   1002        62 17-Oct-2020 01:06 README.txt
+  393217 drwx------     0      0      4096 26-Jan-2021 18:29 root
+ 1703937 drwxr-xr-x     0      0      4096  8-Oct-2020 10:05 run
+  393220 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 sbin
+ 1048771 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 snap
+ 1179651 drwxr-xr-x     0      0      4096 26-Apr-2018 23:40 srv
+ 1310722 drwxr-xr-x     0      0      4096 24-Apr-2018 14:04 sys
+  524290 drwxrwxrwt     0      0     12288 15-Mar-2021 19:17 tmp
+ 1441794 drwxr-xr-x     0      0      4096 26-Jan-2021 18:46 usr
+ 1321742 drwxr-xr-x     0      0      4096 26-Jan-2021 18:50 var
+
+TestDisk exited normally.
+
+
+Mon Mar 15 19:44:15 2021
+Command line: TestDisk
+
+TestDisk 7.0, Data Recovery Utility, April 2015
+Christophe GRENIER <grenier@cgsecurity.org>
+http://www.cgsecurity.org
+OS: Linux, kernel 4.9.140-tegra (#1 SMP PREEMPT Fri Oct 16 12:25:00 PDT 2020) aarch64
+Compiler: GCC 7.2
+ext2fs lib: 1.44.1, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.0
+User is not root!
+Hard disk list
+
+
+TestDisk exited normally.
+
+
+Mon Mar 15 19:44:20 2021
+Command line: TestDisk
+
+TestDisk 7.0, Data Recovery Utility, April 2015
+Christophe GRENIER <grenier@cgsecurity.org>
+http://www.cgsecurity.org
+OS: Linux, kernel 4.9.140-tegra (#1 SMP PREEMPT Fri Oct 16 12:25:00 PDT 2020) aarch64
+Compiler: GCC 7.2
+ext2fs lib: 1.44.1, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.0
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Hard disk list
+Disk /dev/mmcblk0 - 31 GB / 29 GiB - CHS 954368 4 16, sector size=512
+
+Partition table type (auto): EFI GPT
+Disk /dev/mmcblk0 - 31 GB / 29 GiB
+Partition table type: EFI GPT
+
+Interface Advanced
+hdr_size=92
+hdr_lba_self=1
+hdr_lba_alt=61079551 (expected 61079551)
+hdr_lba_start=40
+hdr_lba_end=61079519
+hdr_lba_table=2
+hdr_entries=128
+hdr_entsz=128
+check_part_gpt failed for partition
+ 2 P MS Data                 58720296   58720615        320 [mts-mce]
+check_part_gpt failed for partition
+ 3 P MS Data                 58720616   58720935        320 [mts-mce_b]
+check_part_gpt failed for partition
+ 4 P MS Data                 58720936   58729127       8192 [mts-proper]
+check_part_gpt failed for partition
+ 5 P MS Data                 58729128   58737319       8192 [mts-proper_b]
+check_part_gpt failed for partition
+ 6 P MS Data                 58737320   58740071       2752 [cpu-bootloader]
+check_part_gpt failed for partition
+ 7 P MS Data                 58740072   58742823       2752 [cpu-bootloader_b]
+check_part_gpt failed for partition
+ 8 P MS Data                 58742824   58743847       1024 [bootloader-dtb]
+check_part_gpt failed for partition
+ 9 P MS Data                 58743848   58744871       1024 [bootloader-dtb_b]
+check_part_gpt failed for partition
+10 P MS Data                 58744872   58749991       5120 [secure-os]
+check_part_gpt failed for partition
+11 P MS Data                 58749992   58755111       5120 [secure-os_b]
+check_part_gpt failed for partition
+12 P MS Data                 58755112   58755239        128 [eks]
+check_part_gpt failed for partition
+13 P MS Data                 58755240   58755367        128 [eks_b]
+check_part_gpt failed for partition
+14 P MS Data                 58755368   58758439       3072 [bpmp-fw]
+check_part_gpt failed for partition
+15 P MS Data                 58758440   58761511       3072 [bpmp-fw_b]
+check_part_gpt failed for partition
+16 P MS Data                 58761512   58763559       2048 [bpmp-fw-dtb]
+check_part_gpt failed for partition
+17 P MS Data                 58763560   58765607       2048 [bpmp-fw-dtb_b]
+check_part_gpt failed for partition
+18 P MS Data                 58765608   58765927        320 [xusb-fw]
+check_part_gpt failed for partition
+19 P MS Data                 58765928   58766247        320 [xusb-fw_b]
+check_part_gpt failed for partition
+20 P MS Data                 58766248   58768295       2048 [rce-fw]
+check_part_gpt failed for partition
+21 P MS Data                 58768296   58770343       2048 [rce-fw_b]
+check_part_gpt failed for partition
+22 P MS Data                 58770344   58774439       4096 [adsp-fw]
+check_part_gpt failed for partition
+23 P MS Data                 58774440   58778535       4096 [adsp-fw_b]
+check_part_gpt failed for partition
+24 P MS Data                 58778536   58780583       2048 [sce-fw]
+check_part_gpt failed for partition
+25 P MS Data                 58780584   58782631       2048 [sce-fw_b]
+check_part_gpt failed for partition
+26 P MS Data                 58782632   58782887        256 [sc7]
+check_part_gpt failed for partition
+27 P MS Data                 58782888   58783143        256 [sc7_b]
+check_part_gpt failed for partition
+28 P MS Data                 58783144   59045287     262144 [BMP]
+check_part_gpt failed for partition
+29 P MS Data                 59045288   59307431     262144 [BMP_b]
+check_part_gpt failed for partition
+30 P MS Data                 59307432   59436455     129024 [recovery]
+check_part_gpt failed for partition
+31 P MS Data                 59436456   59437479       1024 [recovery-dtb]
+check_part_gpt failed for partition
+32 P MS Data                 59437480   59437607        128 [kernel-bootctrl]
+check_part_gpt failed for partition
+33 P MS Data                 59437608   59437735        128 [kernel-bootctrl_b]
+check_part_gpt failed for partition
+34 P MS Data                 59437736   59601575     163840 [kernel]
+check_part_gpt failed for partition
+35 P MS Data                 59601576   59765415     163840 [kernel_b]
+check_part_gpt failed for partition
+36 P MS Data                 59765416   59766439       1024 [kernel-dtb]
+check_part_gpt failed for partition
+37 P MS Data                 59766440   59767463       1024 [kernel-dtb_b]
+check_part_gpt failed for partition
+38 P MS Data                 59767464   59767471          8 [CPUBL-CFG]
+check_part_gpt failed for partition
+39 P MS Data                 59767472   59783855      16384 [RP1]
+check_part_gpt failed for partition
+40 P MS Data                 59783856   59800239      16384 [RP2]
+check_part_gpt failed for partition
+41 P MS Data                 59800240   60414639     614400 [RECROOTFS]
+check_part_gpt failed for partition
+42 P MS Data                 60414640   61079518     664879 [UDA]
+ 1 P MS Data                       40   58720295   58720256 [APP]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 30 GB / 28 GiB
+ 2 P MS Data                 58720296   58720615        320 [mts-mce]
+ 3 P MS Data                 58720616   58720935        320 [mts-mce_b]
+ 4 P MS Data                 58720936   58729127       8192 [mts-proper]
+ 5 P MS Data                 58729128   58737319       8192 [mts-proper_b]
+ 6 P MS Data                 58737320   58740071       2752 [cpu-bootloader]
+ 7 P MS Data                 58740072   58742823       2752 [cpu-bootloader_b]
+ 8 P MS Data                 58742824   58743847       1024 [bootloader-dtb]
+ 9 P MS Data                 58743848   58744871       1024 [bootloader-dtb_b]
+10 P MS Data                 58744872   58749991       5120 [secure-os]
+11 P MS Data                 58749992   58755111       5120 [secure-os_b]
+12 P MS Data                 58755112   58755239        128 [eks]
+13 P MS Data                 58755240   58755367        128 [eks_b]
+14 P MS Data                 58755368   58758439       3072 [bpmp-fw]
+15 P MS Data                 58758440   58761511       3072 [bpmp-fw_b]
+16 P MS Data                 58761512   58763559       2048 [bpmp-fw-dtb]
+17 P MS Data                 58763560   58765607       2048 [bpmp-fw-dtb_b]
+18 P MS Data                 58765608   58765927        320 [xusb-fw]
+19 P MS Data                 58765928   58766247        320 [xusb-fw_b]
+20 P MS Data                 58766248   58768295       2048 [rce-fw]
+21 P MS Data                 58768296   58770343       2048 [rce-fw_b]
+22 P MS Data                 58770344   58774439       4096 [adsp-fw]
+23 P MS Data                 58774440   58778535       4096 [adsp-fw_b]
+24 P MS Data                 58778536   58780583       2048 [sce-fw]
+25 P MS Data                 58780584   58782631       2048 [sce-fw_b]
+26 P MS Data                 58782632   58782887        256 [sc7]
+27 P MS Data                 58782888   58783143        256 [sc7_b]
+28 P MS Data                 58783144   59045287     262144 [BMP]
+29 P MS Data                 59045288   59307431     262144 [BMP_b]
+30 P MS Data                 59307432   59436455     129024 [recovery]
+31 P MS Data                 59436456   59437479       1024 [recovery-dtb]
+32 P MS Data                 59437480   59437607        128 [kernel-bootctrl]
+33 P MS Data                 59437608   59437735        128 [kernel-bootctrl_b]
+34 P MS Data                 59437736   59601575     163840 [kernel]
+35 P MS Data                 59601576   59765415     163840 [kernel_b]
+36 P MS Data                 59765416   59766439       1024 [kernel-dtb]
+37 P MS Data                 59766440   59767463       1024 [kernel-dtb_b]
+38 P MS Data                 59767464   59767471          8 [CPUBL-CFG]
+39 P MS Data                 59767472   59783855      16384 [RP1]
+40 P MS Data                 59783856   59800239      16384 [RP2]
+41 P MS Data                 59800240   60414639     614400 [RECROOTFS]
+42 P MS Data                 60414640   61079518     664879 [UDA]
+search_superblock
+
+recover_EXT2: s_block_group_nr=0/224, s_mnt_count=30/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 7340032
+recover_EXT2: part_size 58720256
+Ext2 superblock found at sector 2 (block=0, blocksize=4096)
+
+block_group_nr 1
+
+recover_EXT2: "e2fsck -b 32768 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=1/224, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 7340032
+recover_EXT2: part_size 58720256
+Ext2 superblock found at sector 262144 (block=32768, blocksize=4096)
+
+block_group_nr 3
+
+recover_EXT2: "e2fsck -b 98304 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=3/224, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 7340032
+recover_EXT2: part_size 58720256
+Ext2 superblock found at sector 786432 (block=98304, blocksize=4096)
+
+block_group_nr 5
+
+recover_EXT2: "e2fsck -b 163840 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=5/224, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 7340032
+recover_EXT2: part_size 58720256
+Ext2 superblock found at sector 1310720 (block=163840, blocksize=4096)
+
+block_group_nr 7
+
+recover_EXT2: "e2fsck -b 229376 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=7/224, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 7340032
+recover_EXT2: part_size 58720256
+Ext2 superblock found at sector 1835008 (block=229376, blocksize=4096)
+
+block_group_nr 9
+
+recover_EXT2: "e2fsck -b 294912 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=9/224, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 7340032
+recover_EXT2: part_size 58720256
+Ext2 superblock found at sector 2359296 (block=294912, blocksize=4096)
+
+block_group_nr 25
+
+recover_EXT2: "e2fsck -b 819200 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=25/224, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 7340032
+recover_EXT2: part_size 58720256
+Ext2 superblock found at sector 6553600 (block=819200, blocksize=4096)
+
+block_group_nr 27
+
+recover_EXT2: "e2fsck -b 884736 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=27/224, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 7340032
+recover_EXT2: part_size 58720256
+Ext2 superblock found at sector 7077888 (block=884736, blocksize=4096)
+
+block_group_nr 49
+
+recover_EXT2: "e2fsck -b 1605632 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=49/224, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 7340032
+recover_EXT2: part_size 58720256
+Ext2 superblock found at sector 12845056 (block=1605632, blocksize=4096)
+
+block_group_nr 81
+
+recover_EXT2: "e2fsck -b 2654208 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=81/224, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 7340032
+recover_EXT2: part_size 58720256
+Ext2 superblock found at sector 21233664 (block=2654208, blocksize=4096)
+  MS Data                       40   58720295   58720256 [APP]
+superblock 0, blocksize=4096 []
+superblock 32768, blocksize=4096 []
+superblock 98304, blocksize=4096 []
+superblock 163840, blocksize=4096 []
+superblock 229376, blocksize=4096 []
+superblock 294912, blocksize=4096 []
+superblock 819200, blocksize=4096 []
+superblock 884736, blocksize=4096 []
+superblock 1605632, blocksize=4096 []
+superblock 2654208, blocksize=4096 []
+
+To repair the filesystem using alternate superblock, run
+fsck.ext4 -p -b superblock -B blocksize device
+
+
+dir_partition inode=2
+ 1 P MS Data                       40   58720295   58720256 [APP]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 30 GB / 28 GiB
+Directory /
+       2 drwxr-xr-x     0      0      4096 26-Jan-2021 18:13 .
+       2 drwxr-xr-x     0      0      4096 26-Jan-2021 18:13 ..
+      11 drwx------     0      0     16384 26-Jan-2021 17:47 lost+found
+  786433 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 boot
+ 1048577 drwxr-xr-x     0      0      4096 27-Jan-2021 12:47 bin
+ 1179649 drwxr-xr-x     0      0      4096 26-Jan-2021 17:45 dev
+  131073 drwxr-xr-x     0      0     12288 15-Mar-2021 18:39 etc
+  524289 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 home
+  655361 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 lib
+ 1310721 drwxr-xr-x     0      0      4096  6-Aug-2018 11:29 media
+ 1572865 drwxr-xr-x     0      0      4096 15-Mar-2021 18:39 mnt
+  262145 drwxr-xr-x     0      0      4096 27-Jan-2021 14:37 opt
+ 1441793 drwxr-xr-x     0      0      4096 24-Apr-2018 14:04 proc
+      12 -rw-rw-r--  1001   1002        62 17-Oct-2020 01:06 README.txt
+  393217 drwx------     0      0      4096 26-Jan-2021 18:29 root
+ 1703937 drwxr-xr-x     0      0      4096  8-Oct-2020 10:05 run
+  393220 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 sbin
+ 1048771 drwxr-xr-x     0      0      4096 26-Jan-2021 18:34 snap
+ 1179651 drwxr-xr-x     0      0      4096 26-Apr-2018 23:40 srv
+ 1310722 drwxr-xr-x     0      0      4096 24-Apr-2018 14:04 sys
+  524290 drwxrwxrwt     0      0     12288 15-Mar-2021 19:44 tmp
+ 1441794 drwxr-xr-x     0      0      4096 26-Jan-2021 18:46 usr
+ 1321742 drwxr-xr-x     0      0      4096 26-Jan-2021 18:50 var
+SIGINT detected! TestDisk has been killed.

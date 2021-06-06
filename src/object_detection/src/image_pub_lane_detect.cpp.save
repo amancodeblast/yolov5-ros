@@ -1,0 +1,355 @@
+
+#include <ros/ros.h>
+#include <image_transport/image_transport.h>
+#include <opencv2/highgui/highgui.hpp>
+#include <cv_bridge/cv_bridge.h>
+#include <sstream> // for converting the command line parameter to integer
+#include <torch/script.h>
+#include <torch/torch.h>//#define _GLIBCXX_USE_CXX11_ABI 0
+#include <iostream>
+#include <memory>
+#include <algorithm>
+#include <c10/cuda/CUDAStream.h>
+#include <ATen/cuda/CUDAEvent.h>
+
+#include <opencv2/core.hpp>
+#include <opencv2/imgproc.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/dnn/dnn.hpp>
+#include <chrono>
+#include <sensor_msgs/image_encodings.h>
+#include <string>
+#include <cmath>
+
+#include "nms/src/nms.cpp"
+using namespace torch::indexing;
+
+static const std::string OPENCV_WINDOW = "Image window";
+
+class Detector {
+    public:
+    /***
+     * @brief constructor
+     * @param model_path - path of the TorchScript weight file
+     * @param device_type - inference with CPU/GPU
+     */
+
+
+    //constructor to load the model from torchscript
+    Detector(const std::string& model_path, const torch::DeviceType& device_type);
+    
+    /***
+     * @brief Non Max Supression
+     * @param Reg_Proposals - Region Proposals
+     * @param conf_threshold - confidence threshold
+     * @param attention_matrix - got from attention module of the model
+     * 
+     * @return Proposals_List - the final output for the forward function of the model is proposals list
+     */
+    std::vector<torch::Tensor> run_the_code(const cv::Mat& img, float conf_threshold);
+    static std::vector<torch::Tensor> non_max_supression(const torch::Tensor& reg_proposals, int nms_thresh, int nms_topk,
+					 float conf_threshold);
+
+    /***
+     * @brief Decode - It takes the proposals list and then returns the output in the form os lanes and (x,y) coordinates
+     * @param Propsals_List - Contains the combination of region proposals and attention matrix
+     * @param as_lanes 
+     * @return Proposals_List - the final output for the forward function of the model is proposals list
+     */
+
+    static std::vector<torch::Tensor> decode(const std::vector<torch::Tensor>& proposals_list, bool as_lanes);
+
+    static std::vector<torch::Tensor> proposals_to_pred(const torch::Tensor& proposals);
+
+    torch::jit::script::Module module_;
+    torch::Device device_;
+    bool half_;
+
+};
+
+//Constructor to load the torchscript model
+Detector::Detector(const std::string& model_path, const torch::DeviceType& device_type) : device_(device_type) {
+    try {
+        // Deserialize the ScriptModule from a file using torch::jit::load().
+        module_ = torch::jit::load(model_path);
+    }
+    catch (const c10::Error& e) {
+        std::cerr << "Error loading the model!\n";
+        std::exit(EXIT_FAILURE);
+    }
+
+    half_ = (device_ != torch::kCPU);
+    module_.to(device_);
+
+    if (half_) {
+        module_.to(torch::kHalf);
+    }
+
+    module_.eval();
+}
+
+
+// void softmax(double* input, size_t size) 
+// {	assert(0 <= size <= sizeof(input) / sizeof(double));	int i;
+//   double m, sum, constant;	m = -INFINITY;
+//   for (i = 0; i < size; ++i) {
+//     if (m < input[i]) {
+//       m = input[i];
+//     }
+//   }	sum = 0.0;
+//   for (i = 0; i < size; ++i) {
+//     sum += exp(input[i] - m);
+//   }	constant = m + log(sum);
+//   for (i = 0; i < size; ++i) {
+//     input[i] = exp(input[i] - constant);
+//   }}
+std::vector<torch::Tensor> Detector::run_the_code(const cv::Mat& img, float conf_threshold=0.5) {
+ 
+  std::cout << "----------New Frame----------" << std::endl;
+  cv::Mat img_input = img.clone();
+  cv::resize(img_input, img_input, cv::Size(640.0, 360.0));
+  auto tensor_img = torch::from_blob(img_input.data, {1, img_input.rows, img_input.cols, img_input.channels()}).to(device_);
+  
+  std::vector<torch::jit::IValue> inputs;
+  inputs.emplace_back(tensor_img);
+
+  torch::jit::IValue output = module_.forward(inputs);
+
+  auto nms_output = non_max_supression(output.toTensor(), 50, 10, 0.5);
+
+  auto prediction = decode(nms_output, true);
+  // not writing predictions.extend wala part because it is not used anywhere while inferencing
+  //need to write annotations wala part somehow
+
+ return prediction;
+}
+
+std::vector<torch::Tensor> Detector::non_max_supression(const torch::Tensor& reg_proposals, int nms_thresh=50, int nms_topk=1000,
+                                    float conf_threshold = 0.5)
+{
+    std::vector<torch::Tensor> proposals_list, proposals_copy;
+    //torch::Tensor above_threshold;
+    std::vector<bool> above_threshold;
+    //torch::Tensor NoGradGuard no_grad;
+    //std::vector<float>  anchor_inds, anchor_inds_copy, anchor_inds_copy_copy;
+    torch::Tensor temp, scores, scores_copy, keep,  _, anchor_inds, anchor_inds_copy, anchor_inds_copy_copy;
+    torch::Tensor num_to_keep; //from nms.cpp
+    for (int j = 0; j < reg_proposals.sizes()[0]; j++)
+    {   torch::Tensor  proposals_copy_copy;
+        anchor_inds = torch::arange(reg_proposals.sizes()[1]);
+        temp = torch::nn::functional::softmax(reg_proposals[j].index({Slice(), Slice(None, 2)}),torch::nn::functional::SoftmaxFuncOptions(1));
+	scores = temp.index({Slice(), Slice(1)});
+        if(conf_threshold != -1.0)
+        {
+          for(int i = 0; i < scores.sizes()[0]; i++)
+          {
+            if (scores[i].item<float>() > conf_threshold)
+            {
+              above_threshold.push_back(true);
+		 //above_threshold = torch::add(true);
+	    }
+            else
+	    {
+              above_threshold.push_back(false);
+		// above_threshold = torch::add(false);
+	    }
+          }
+       }
+       for(int i =0; i < above_threshold.size(); i++)
+        {
+          if(above_threshold[i] == true)
+          {
+            proposals_copy.push_back(reg_proposals[j][i]);
+            scores_copy = torch::stack(scores[i]);
+            anchor_inds_copy = torch::stack(anchor_inds[i]);
+          }
+       }
+	
+	if(reg_proposals[j].sizes()[0] ==0)
+	  {
+	   proposals_list.push_back(reg_proposals[j][0]);
+	   continue;
+	  }
+       
+       keep, num_to_keep, _ = nms_forward(reg_proposals[proposals_copy], scores, nms_thresh, nms_topk);
+       keep = keep.index({Slice(None, num_to_keep.item<int>())});
+       for(int i=0; i < keep.sizes()[0]; i++)
+        {
+          proposals_copy_copy = torch::stack(proposals_copy[keep[i].item<int>()]);
+          //anchor_inds_copy_copy.push_back(anchors[keep[i]]);
+        }
+    proposals_list.push_back(proposals_copy_copy);
+    }
+return proposals_list;
+}
+
+std::vector::vector<<torch::Tensor> > Detector::decode(const std::vector<torch::Tensor>& proposals_list, bool as_lanes = true)
+{
+
+  std::vector::vector<<torch::Tensor> > decoded;
+  torch::Tensor pred;
+  for(int i =0  ; i < proposals_list.size() ; i++ )
+  {
+    proposals_list[i].index({Slice(),Slice(None, 2)}) = torch::nn::functional::softmax(proposals_list[i].index({Slice(), Slice(None, 2)}), torch::nn::functional::SoftmaxFuncOptions(1));
+    proposals_list[i].index({Slice(), Slice(4)}) = round(proposals_list[i].index({Slice(), Slice(4)}));
+    if (proposals_list[i].sizes()[0] == 0)
+    {
+      decoded.push_back(proposals_list[i]); //append null
+      continue;
+    }
+    if (as_lanes == true)
+    {
+      pred = proposals_to_pred(proposals_list[i]);
+    }
+    else
+    {
+      pred = proposals_list[i];
+    }
+    decoded.push_back(pred);
+
+  }
+  return decoded;
+}
+
+std::vector<torch::Tensor> Detector::proposals_to_pred(const torch::Tensor& proposals)
+{
+    std::vector<torch::Tensor> lanes;
+    int n_offsets = 72;
+    torch::Tensor anchor_ys = torch::linspace(1, 0, n_offsets);
+    torch::Tensor lane_xs, lane_ys, lane_xs_copy, lane_ys_copy, points, lane_xs_copy_copy, lane_ys_copy_copy;
+    int start, end, length, img_w, n_strips;
+    img_w = 640;
+    n_strips = 71;
+    std::vector<bool>  boolean, mask;
+    //std::string lane_start, lane_end, lane;
+    //lane_start =  "[Lane]\n";
+    //lane_end = "\n[/Lane]";
+    
+    for(int i= 0; i <= proposals.sizes()[0]; i++)
+    {
+      lane_xs = proposals[i.item<int>()].index({Slice(5, None)}) /  img_w;
+      start = round(proposals[i.item<int>()][2]*n_strips);
+      length = round(proposals[i.item<int>()][4]));
+      end = start + length -1;
+      end = std::min(end, anchor_ys.sizes()[0] - 1);
+
+//mask
+      for(int j = 0; j< start; i++)
+      {
+      boolean.push_back(lane_xs[j] > 0.0 && lane_xs[j] < 1.0);
+      }
+
+
+      for(int j = 0; j < boolean.size(); j++)
+      {
+         mask.push_back(~boolean[i]);
+      }
+    lane_xs.index({Slice(end+1, None)}) = -2;
+    //for (int j = 0; j < mask.size(); j++)
+    //{
+    //	lane_xs.index({Slice(None, start)})[i] = -2;
+    //}
+
+    for( int j = 0; j < anchor_ys.sizes()[0]; j++)
+    {
+      if (lane_xs[j] >=0)
+      {
+        lane_ys_copy = torch::stack(anchor_ys[j.item<int>());
+        lane_xs_copy = torch::stack(lane_xs[j.item<int>());
+      }
+
+    }
+    for (int j =lane_xs_copy.sizes()[0]; j >0, j--)
+   {
+
+    lane_xs_copy_copy = torch::stack(lane_xs_copy[j]);
+    lane_ys_copy_copy = torch::stack(lane_ys_copy[j].item<int>());
+   }
+    if (lane_xs_copy.sizes()[0] <=1)
+    {
+        continue;
+    }
+    //Here we need to see what squeeze is and what is dim = 1 in python code
+
+    points = torch::stack(lane_xs.view(-1, 1), lane_ys.view(-1, 1)).squeeze(2);
+    // lane = str(points.cpu().numpy())
+    lanes.push_back(points);
+    }
+return lanes;
+}
+
+
+class ImageConverter
+{
+  ros::NodeHandle nh_;
+  image_transport::ImageTransport it_;
+  image_transport::Subscriber image_sub_;
+  image_transport::Publisher image_pub_;
+  torch::DeviceType device_type = torch::kCUDA;
+  std::string weights = "/home/dheerajk/perception_module/src/object_detection/src/model_epoch_15_r18_v2.torchscript.pt";
+  Detector detector = Detector(weights, device_type);
+public:
+  ImageConverter()
+    : it_(nh_)
+  {
+    // Subscrive to input video feed and publish output video feed
+    image_sub_ = it_.subscribe("/camera/image_raw", 1,
+      &ImageConverter::imageCb, this);
+    image_pub_ = it_.advertise("/image_converter/output_video", 1);
+
+    //cv::namedWindow(OPENCV_WINDOW);
+    //warmup();
+  }
+
+  ~ImageConverter()
+  {
+    cv::destroyWindow(OPENCV_WINDOW);
+  }
+
+  void imageCb(const sensor_msgs::ImageConstPtr& msg)
+  {
+    cv_bridge::CvImagePtr cv_ptr;
+    try
+    {
+      cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
+    }
+    catch (cv_bridge::Exception& e)
+    {
+      ROS_ERROR("cv_bridge exception: %s", e.what());
+      return;
+    }
+
+    // Perform object detection on frame
+    auto result = detector.run_the_code(cv_ptr->image, 0.5);
+    //Demo(cv_ptr->image, result, class_names);
+    //sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", image_od_CV).toImageMsg();
+    // Update GUI Window
+    //cv::imshow(OPENCV_WINDOW, cv_ptr->image);
+    //cv::waitKey(27);
+
+    // Output modified video stream
+    //image_pub.publish(msg)
+    image_pub_.publish(cv_ptr->toImageMsg());
+  }
+};
+
+
+int main(int argc, char **argv)
+{
+  // Check if video source has been passed as a parameter
+  // if(argv[1] == NULL) return 1;
+
+  ros::init(argc, argv, "image_pub_lane_detect");
+  ImageConverter ic;
+  ros::spin();
+  return 0; 
+}
+
+// need to figure out warmup waali cheez
+// need to figure out the predictions k baad kya aur demo ka kaise krna hai
+// need to verify softmax slicing in nms function
+// check how to append null and verify if tukka works
+
+
+//defining above_threshold as a vector because cant append a boolean value inside a tensor like this
+// How to figure out how to write this in c++ : lane_xs[:start][mask] = -2

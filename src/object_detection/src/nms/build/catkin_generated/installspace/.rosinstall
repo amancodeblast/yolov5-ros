@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/nvidia/perception_module/src/object_detection/src/nms/install/setup.sh

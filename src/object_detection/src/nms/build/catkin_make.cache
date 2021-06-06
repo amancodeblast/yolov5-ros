@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/nvidia/perception_module/src/object_detection/src/nms/devel -DCMAKE_INSTALL_PREFIX=/home/nvidia/perception_module/src/object_detection/src/nms/install -G Unix Makefiles
